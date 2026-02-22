@@ -21,7 +21,7 @@
             <div class="card shadow">
                 <div class="card-body">
                     <p class="text-center text-muted mb-1">Clinical Estimation Tool</p>
-                    <h3 class="text-center mb-4">ABC/2 Method Hematoma Volume</h3>
+                    <h3 class="text-center mb-4">ABC/2 Hematoma Volume</h3>
                     
                     <form id="calculatorForm">
 
@@ -63,11 +63,23 @@
                 </div>
             </div>
             <div class="text-center mt-5 mb-4">
-                <h6 class="text-uppercase text-muted mb-2">Designed for the MINUTE Trial</h6>
-                <p class="text-muted mb-3"> Clinical reference for ABC/2 method calculation.</p>
-                <a href="https://radiopaedia.org/articles/abc2?lang=us" target="_blank"
-                class="btn btn-outline-primary rounded-pill px-4">
-                View Reference (Radiopaedia)
+                <h5 class="fw-semibold mb-2">
+                Designed for the 
+                <a href="https://nihstrokenet.org/trials/minute/home"
+                    target="_blank"
+                    class="minute-link">
+                    MINUTE Trial
+                </a>
+                </h5>
+
+                <p class="text-muted mb-3">
+                    Clinical reference for ABC/2 method calculation.
+                </p>
+
+                <a href="https://radiopaedia.org/articles/abc2?lang=us"
+                    target="_blank"
+                    class="btn btn-outline-primary rounded-pill px-4">
+                    View ABC/2 Reference
                 </a>
             </div>
             <!-- History Table -->
@@ -93,6 +105,19 @@
         </div>
     </div>
 </div>
+<footer class="text-center mt-5 mb-4">
+    <div class="footer-wrapper">
+        <p class="footer-text mb-0" onclick="copyEmail()">
+            Built by Ally Qi © 2026 | All rights reserved.
+        </p>
+        <div class="email-tooltip-box" id="emailTooltip">
+            mcally1220@gmail.com
+        </div>
+        <div class="copy-confirmation" id="copyConfirm">
+            Copied to clipboard ✓
+        </div>
+    </div>
+</footer>
 
 <script>
     const form = document.getElementById("calculatorForm");
@@ -186,6 +211,17 @@
         doc.text(`Volume (ABC/2): ${lastCalculation.volume} cm³`, 20, 100);
 
         doc.save("MINUTE_hematoma_volume_report.pdf");
+    }
+    function copyEmail() {
+        const email = "mcally1220@gmail.com";
+        navigator.clipboard.writeText(email);
+
+        const confirmation = document.getElementById("copyConfirm");
+        confirmation.style.opacity = "1";
+
+        setTimeout(() => {
+            confirmation.style.opacity = "0";
+        }, 1500);
     }
 </script>
 

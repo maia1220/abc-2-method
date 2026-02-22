@@ -83,3 +83,71 @@ h3 {
 .container {
     max-width: 800px;
 }
+
+/* ===============================
+   Apple-Style Floating Footer Tooltip
+   =============================== */
+
+.footer-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #6e6e73;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.footer-text:hover {
+    color: #1d1d1f;
+}
+
+/* Floating Email Tooltip */
+.email-tooltip-box {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1d1d1f;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* Show on hover */
+.footer-wrapper:hover .email-tooltip-box {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Copy Confirmation */
+.copy-confirmation {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: #0071e3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* MINUTE trial link styling */
+
+.minute-link {
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.minute-link:hover {
+    opacity: 0.7;
+}
